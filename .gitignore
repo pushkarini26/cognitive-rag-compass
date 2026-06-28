@@ -3,3 +3,7 @@ __pycache__/
 .streamlit/
 storage_vault/
 .chroma/
+.chroma_db/
+storage_vault/
+__pycache__/
+venv/
