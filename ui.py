@@ -89,7 +89,7 @@ if uploaded_file is not None:
     files = {"file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")}
     
     try:
-        backend_url = "http://localhost:8000/v1/document/upload"
+        backend_url = "https://pushkarini-rag-backend.hf.space/v1/document/upload"
         response = requests.post(backend_url, files=files)
         
         if response.status_code == 200:
@@ -140,7 +140,7 @@ user_query = st.text_input(
 if user_query:
     with st.spinner("🔍 Calculating query embeddings and traversing vector space..."):
         try:
-            search_url = f"http://localhost:8000/v1/document/search?query={user_query}&limit={search_limit}"
+            search_url = f"https://pushkarini-rag-backend.hf.space/v1/document/search?query={user_query}&limit={search_limit}"
             search_response = requests.get(search_url)
             
             if search_response.status_code == 200:
