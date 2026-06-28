@@ -116,8 +116,8 @@ if uploaded_file is not None:
         else:
             st.error("❌ The extraction backend encountered an error processing this block payload.")
             
-    except requests.exceptions.ConnectionError:
-        st.error("❌ Network Connection Failure. Verify your FastAPI backend is running.")
+    except Exception as e:
+    st.exception(e)
 
 # 5. Semantic Search UI Section
 st.write("---")
@@ -169,5 +169,6 @@ if user_query:
                         st.markdown(card_html, unsafe_allow_html=True)
             else:
                 st.error("❌ The query engine backend returned an operation error.")
-        except requests.exceptions.ConnectionError:
-            st.error("❌ Network broadcast broken. Verify your FastAPI backend is live.")
+        except Exception as e:
+    st.exception(e)
+
