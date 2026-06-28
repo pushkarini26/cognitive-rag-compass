@@ -117,7 +117,7 @@ if uploaded_file is not None:
             st.error("❌ The extraction backend encountered an error processing this block payload.")
             
     except Exception as e:
-    st.exception(e)
+        st.exception(e)
 
 # 5. Semantic Search UI Section
 st.write("---")
@@ -170,5 +170,5 @@ if user_query:
             else:
                 st.error("❌ The query engine backend returned an operation error.")
         except Exception as e:
-    st.exception(e)
+            st.exception(e)
 
